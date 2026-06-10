@@ -8,7 +8,7 @@ local ns = vim.api.nvim_create_namespace("scope_hints")
 
 local cfg = {
 	mode = "always", -- "always": every visible scope. "cursor": only the scope the cursor is in.
-	min_lines = 2, -- only annotate scopes at least this tall
+	min_lines = 15, -- only annotate scopes at least this tall
 	max_len = 80, -- ellipsize hints longer than this
 	hl = "Comment", -- subtle gray
 	debounce = 120,
@@ -112,8 +112,8 @@ function M.setup(opts)
 		end,
 	})
 
-	-- Lazy loads us on an event, so the buffer that triggered loading already
-	-- missed the autocmds above — annotate it now.
+	-- Lazy loads us on an event, so the current buffer may be unannotated. Do
+	-- one immediate refresh to catch it.
 	vim.schedule(function()
 		refresh(vim.api.nvim_get_current_buf())
 	end)

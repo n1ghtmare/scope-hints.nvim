@@ -23,10 +23,10 @@ it - so a long block's `}`/`end` tells you what it closes. Pure core-treesitter
 | option      | default     | meaning                                                  |
 | ----------- | ----------- | -------------------------------------------------------- |
 | `mode`      | `"always"`  | `"always"` = every visible scope; `"cursor"` = current   |
-| `min_lines` | `2`         | only annotate scopes at least this many lines tall        |
-| `max_len`   | `80`        | ellipsize hints longer than this                          |
-| `hl`        | `"Comment"` | highlight group for the hint                              |
-| `debounce`  | `120`       | ms to coalesce redraws after an event                     |
+| `min_lines` | `17`        | only annotate scopes at least this many lines tall       |
+| `max_len`   | `80`        | ellipsize hints longer than this                         |
+| `hl`        | `"Comment"` | highlight group for the hint                             |
+| `debounce`  | `120`       | ms to coalesce redraws after an event                    |
 
 ## Requirements
 
